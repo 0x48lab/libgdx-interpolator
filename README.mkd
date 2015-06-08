@@ -1,0 +1,12 @@
+
+Interpolator graph (libGDX)
+==================================
+
+* Interpolatorをグラフで確認するツールです。
+* 動作環境
+  * Android
+  * Desktop
+* Desktop環境では、いくつかのInterpolatorをポーティングすることで対応しています。
+
+
+
