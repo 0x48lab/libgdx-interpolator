@@ -41,9 +41,9 @@ public class GraphActor extends Actor implements Disposable {
 
     @Override
     protected void sizeChanged() {
-        float paddingTop = 60.f;
+        float paddingTop = 80.f;
         float paddingRight = 60.f;
-        float paddingBottom = 60.f;
+        float paddingBottom = 80.f;
         float paddingLeft = 60.f;
         float rectWidth = getWidth() - paddingLeft - paddingRight;
         float rectHeight = getHeight() - paddingBottom - paddingTop;
