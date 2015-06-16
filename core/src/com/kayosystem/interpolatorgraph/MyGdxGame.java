@@ -76,7 +76,7 @@ public class MyGdxGame extends ApplicationAdapter {
     public void resize(int width, int height) {
         stage.getViewport().update(width, height, true);
         listActor.setHeight(height);
-        float right = listActor.getRight() + 60.f;
+        float right = listActor.getRight() + 80.f;
         Gdx.app.log("MyGdxGame", "right=" + right);
         graphActor.setBounds(right, 0, width - right, height);
     }
