@@ -1,26 +1,21 @@
 package com.kayosystem.interpolatorgraph;
 
 import android.view.animation.Interpolator;
+
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.utils.Scaling;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import com.badlogic.gdx.utils.viewport.FillViewport;
-import com.badlogic.gdx.utils.viewport.ScalingViewport;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kayosystem.interpolatorgraph.ui.ListActor;
-
-import java.util.ArrayList;
 
 public class MyGdxGame extends ApplicationAdapter {
 
     // 描画範囲
-    private final ArrayList<Interpolator> interpolators;
+    private final Array<Interpolator> interpolators;
 
     // テクスチャ
     private BitmapFont font;
@@ -31,6 +26,7 @@ public class MyGdxGame extends ApplicationAdapter {
     public MyGdxGame() {
         this(null);
     }
+
     public MyGdxGame(IInterpolatorDelegate delegate) {
         try {
             if (delegate != null) {

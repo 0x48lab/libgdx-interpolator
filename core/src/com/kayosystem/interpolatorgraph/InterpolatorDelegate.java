@@ -1,17 +1,17 @@
 package com.kayosystem.interpolatorgraph;
 
 import android.view.animation.Interpolator;
-import com.kayosystem.interpolatorgraph.android.view.animation.*;
 
-import java.util.ArrayList;
+import com.badlogic.gdx.utils.Array;
+import com.kayosystem.interpolatorgraph.android.view.animation.*;
 
 /**
  * Created by kayo on 15/06/08.
  */
 public class InterpolatorDelegate implements IInterpolatorDelegate {
     @Override
-    public ArrayList<Interpolator> create() throws IllegalAccessException {
-        ArrayList<Interpolator> interpolators = new ArrayList<Interpolator>();
+    public Array<Interpolator> create() throws IllegalAccessException {
+        Array<Interpolator> interpolators = new Array<Interpolator>();
         interpolators.add(new AccelerateDecelerateInterpolator());
         interpolators.add(new AccelerateInterpolator());
         interpolators.add(new AnticipateInterpolator());

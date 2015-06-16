@@ -7,13 +7,13 @@ import com.kayosystem.interpolatorgraph.MyGdxGame;
 
 public class HtmlLauncher extends GwtApplication {
 
-        @Override
-        public GwtApplicationConfiguration getConfig () {
-                return new GwtApplicationConfiguration(480, 320);
-        }
+    @Override
+    public GwtApplicationConfiguration getConfig() {
+        return new GwtApplicationConfiguration(800, 480);
+    }
 
-        @Override
-        public ApplicationListener getApplicationListener () {
-                return new MyGdxGame();
-        }
+    @Override
+    public ApplicationListener getApplicationListener() {
+        return new MyGdxGame();
+    }
 }

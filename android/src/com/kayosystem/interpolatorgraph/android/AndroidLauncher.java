@@ -10,11 +10,11 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+import com.badlogic.gdx.utils.Array;
 import com.kayosystem.interpolatorgraph.IInterpolatorDelegate;
 import com.kayosystem.interpolatorgraph.MyGdxGame;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 
 public class AndroidLauncher extends AndroidApplication {
     @Override
@@ -33,8 +33,8 @@ public class AndroidLauncher extends AndroidApplication {
         }
 
         @Override
-        public ArrayList<Interpolator> create() throws IllegalAccessException {
-            ArrayList<Interpolator> list = new ArrayList<>();
+        public Array<Interpolator> create() throws IllegalAccessException {
+            Array<Interpolator> list = new Array<>();
 
             Class<android.R.interpolator> interpolatorClass = android.R.interpolator.class;
             Field[] fields = interpolatorClass.getDeclaredFields();

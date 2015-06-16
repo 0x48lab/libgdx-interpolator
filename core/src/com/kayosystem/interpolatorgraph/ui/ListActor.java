@@ -4,7 +4,6 @@ import android.view.animation.Interpolator;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -15,10 +14,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 import com.kayosystem.interpolatorgraph.utils.DisposeRegister;
-
-import java.util.ArrayList;
 
 /**
  * Created by kayo on 15/06/08.
@@ -28,14 +26,14 @@ public class ListActor extends Group implements Disposable {
     private final ScrollPane scrollPane;
     private final DisposeRegister dr = new DisposeRegister();
     private ShapeRenderer shapeRenderer = new ShapeRenderer();
-    private final ArrayList<Interpolator> interpolators;
+    private final Array<Interpolator> interpolators;
 
     private final BitmapFont font;
     private final GlyphLayout glyph;
     private final Color fontColor;
     private final Table table;
 
-    public ListActor(ArrayList<Interpolator> interpolators, BitmapFont font) {
+    public ListActor(Array<Interpolator> interpolators, BitmapFont font) {
         this.interpolators = interpolators;
         this.font = font;
         this.glyph = new GlyphLayout();

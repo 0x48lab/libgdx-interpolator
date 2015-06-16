@@ -2,6 +2,8 @@ package com.kayosystem.interpolatorgraph;
 
 import android.view.animation.Interpolator;
 
+import com.badlogic.gdx.utils.Array;
+
 import java.util.ArrayList;
 
 /**
@@ -12,6 +14,6 @@ public interface IInterpolatorDelegate {
      * Interpolator のリスト
      * @return
      */
-    ArrayList<Interpolator> create() throws IllegalAccessException;
+    Array<Interpolator> create() throws IllegalAccessException;
 
 }
