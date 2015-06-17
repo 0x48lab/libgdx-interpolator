@@ -5,8 +5,10 @@ Interpolator graph (libGDX)
 * Interpolatorをグラフで確認するツールです。
 * 動作環境
   * Android
-  * Desktop
-* Desktop環境では、いくつかのInterpolatorをポーティングすることで対応しています。
+  * iOS
+  * Desktop(Windows, Mac OS X, Linux)
+  * WebGL/Browser
+* Android以外の環境では、いくつかのInterpolatorをポーティングすることで対応しています。
 
 
 
