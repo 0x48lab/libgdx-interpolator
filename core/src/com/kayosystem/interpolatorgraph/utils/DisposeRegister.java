@@ -1,5 +1,6 @@
 package com.kayosystem.interpolatorgraph.utils;
 
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  */
 public class DisposeRegister implements Disposable {
 
-    final ArrayList<Disposable> disposables = new ArrayList<Disposable>();
+    private final Array<Disposable> disposables = new Array<Disposable>();
 
     public <T extends Disposable> T reg(T obj) {
         disposables.add(obj);
