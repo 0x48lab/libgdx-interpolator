@@ -57,10 +57,12 @@ public class GraphActor extends Actor implements Disposable {
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
+        batch.end();
         float deltaTime = Gdx.graphics.getDeltaTime();
 
         update(deltaTime);
 
+        sr.setProjectionMatrix(this.getStage().getViewport().getCamera().combined);
         sr.begin(ShapeRenderer.ShapeType.Line);
         sr.setColor(Color.BLACK);
         sr.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
@@ -69,12 +71,12 @@ public class GraphActor extends Actor implements Disposable {
         float oldY = rectangle.y;
         for (Vector2 point : points) {
             sr.line(oldX, oldY, point.x, point.y);
-            sr.point(point.x, point.y, 0.f);
             oldX = point.x;
             oldY = point.y;
         }
 
         sr.end();
+        batch.begin();
     }
 
     private void update(float deltaTime) {
