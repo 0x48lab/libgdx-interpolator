@@ -3,8 +3,6 @@ package com.kayosystem.interpolatorgraph.utils;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 
-import java.util.ArrayList;
-
 /**
  * Created by kayo on 15/06/08.
  */
