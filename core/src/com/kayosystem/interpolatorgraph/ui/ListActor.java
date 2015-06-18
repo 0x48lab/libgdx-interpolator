@@ -1,9 +1,8 @@
 package com.kayosystem.interpolatorgraph.ui;
 
 import android.view.animation.Interpolator;
-
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -15,33 +14,26 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.Disposable;
-import com.kayosystem.interpolatorgraph.utils.DisposeRegister;
+import com.kayosystem.interpolatorgraph.Assets;
 
 /**
  * Created by kayo on 15/06/08.
  */
-public class ListActor extends Group implements Disposable {
+public class ListActor extends Group {
 
     private final ScrollPane scrollPane;
-    private final DisposeRegister dr = new DisposeRegister();
     private ShapeRenderer shapeRenderer = new ShapeRenderer();
-    private final Array<Interpolator> interpolators;
 
-    private final BitmapFont font;
-    private final GlyphLayout glyph;
-    private final Color fontColor;
     private final Table table;
 
-    public ListActor(Array<Interpolator> interpolators, BitmapFont font) {
-        this.interpolators = interpolators;
-        this.font = font;
-        this.glyph = new GlyphLayout();
-        this.fontColor = new Color(0, 0, 0, 0);
+    public ListActor(Array<Interpolator> interpolators, Assets assets) {
+        this.table = new Table();
 
-        table = new Table();
+        BitmapFont font = assets.am.get(Assets.FILE_FONT_VERDANA39, BitmapFont.class);
+        font.getData().setScale(0.5f);
+        font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 
-        TextureAtlas textureAtlas = dr.reg(new TextureAtlas(Gdx.files.internal("btn.atlas")));
+        TextureAtlas textureAtlas = assets.am.get(Assets.FILE_ATLAS_BTN, TextureAtlas.class);
         NinePatch normal = textureAtlas.createPatch("btn_default_normal_holo_light");
         NinePatch pressed = textureAtlas.createPatch("btn_default_pressed_holo_light");
 
@@ -92,8 +84,4 @@ public class ListActor extends Group implements Disposable {
         batch.begin();
     }
 
-    @Override
-    public void dispose() {
-        dr.dispose();
-    }
 }
